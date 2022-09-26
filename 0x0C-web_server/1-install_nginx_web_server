@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # installs nginx and configures it on a remote server
 
-apt-get -y update
-apt-get -y install nginx
-ufw allow 'Nginx HTTP'
-sudo chmod -R 755 /var/www/html
-echo 'Hello World!' > /var/www/html/index.html
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo chmod -R 755 /var/www/thenabverse.tech/html
+echo 'Hello World!' > /var/www/thenabverse.tech/html/index.html
 service nginx start
