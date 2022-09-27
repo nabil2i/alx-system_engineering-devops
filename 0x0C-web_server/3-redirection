@@ -5,6 +5,6 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 redirectlines="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n"
-sed -i "23i $redirectlines" /etc/nginx/sites-available/default
+sed -i "46i $redirectlines" /etc/nginx/sites-available/default
 sudo service nginx start
 sudo service nginx reload
