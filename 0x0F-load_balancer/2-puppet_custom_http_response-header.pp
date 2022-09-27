@@ -11,7 +11,7 @@ package { 'nginx':
 file_line { 'a':
   ensure  => 'present',
   path    => '/etc/nginx/sites-available/default',
-  after   => 'listen 80 default_server;',
+  after   => 'server_name _;',
   line    => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
   require => Package['nginx'],
 }
@@ -19,8 +19,8 @@ file_line { 'a':
 file_line { 'b':
   ensure  => 'present',
   path    => '/etc/nginx/sites-available/default',
-  after   => 'listen 80 default_server;',
-  line    => 'add_header X-Served-By $hostname;',
+  after   => 'server_name _;',
+  line    => 'add_header X-Served-By $HOSTNAME;',
   require => Package['nginx'],
 }
 
