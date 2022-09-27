@@ -2,7 +2,6 @@
 # Configures a new Ubuntu server with a custom HTTP header response
 # shellcheck disable=SC2154
 sudo apt-get -y update
-sudo apt-get -y upgrade
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 sudo chmod -R 755 /var/www/html
@@ -11,3 +10,4 @@ sudo sed -i "/server_name _;/a \\\trewrite ^/redirect_me https://www.youtube.com
 sudo sed -i "/http {/a\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
 sudo sed -i "/server_name _;/a\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
 sudo service nginx start
+sudo service nginx reload
