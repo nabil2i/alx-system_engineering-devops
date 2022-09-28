@@ -18,8 +18,8 @@ file_line { 'a':
 
 file_line { 'b':
   ensure  => 'present',
-  path    => '/etc/nginx/sites-available/default',
-  after   => 'server_name _;',
+  path    => '/etc/nginx/nginx.conf',
+  after   => 'http {',
   line    => 'add_header X-Served-By $HOSTNAME;',
   require => Package['nginx'],
 }
