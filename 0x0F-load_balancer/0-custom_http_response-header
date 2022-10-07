@@ -7,7 +7,6 @@ sudo ufw allow 'Nginx HTTP'
 sudo chmod -R 755 /var/www/html
 echo 'Hello World!' | sudo tee /var/www/html/index.html
 sudo sed -i "/server_name _;/a \\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
-#next to sed do the same thing, just choose one of them
 sudo sed -i "/http {/a\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
 sudo service nginx start
 sudo service nginx reload
