@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# download a file froma server with scp
+
+if [ "$#" -lt 5 ]; then
+	echo "Usage: download FILE_TO_DOWNLAD SAVE_FILE_TO SERVER_USERNAME SERVER_IP PATH_TO_SSH_KEY"
+else
+	scp -i "$5" -P 22 -o StrictHostKeyChecking=no "$3@$4":"$1" "$2"
+fi
