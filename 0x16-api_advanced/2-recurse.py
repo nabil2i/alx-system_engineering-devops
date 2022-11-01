@@ -28,7 +28,6 @@ def recurse(subreddit, hot_list=[], count=0, after=None):
                             .get("data")
                             .get("children")]
 
-    posts = r.json()
     if after is None:
         return hot_list2
 
