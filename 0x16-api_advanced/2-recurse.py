@@ -6,7 +6,7 @@ the titles of all hot articles for a given subreddit"""
 import requests
 
 
-def recurse(subreddit, hot_list=[], after=None):
+def recurse(subreddit, hot_list=[], count=0, after=None):
     """function queries the Reddit API and
     returns a list containing the titles of all
     hot articles for a given subreddit"""
@@ -16,11 +16,12 @@ def recurse(subreddit, hot_list=[], after=None):
                      .format(subreddit),
                      headers={"User-Agent": "Custom-User-Agent"},
                      allow_redirects=False,
-                     params={"after": after})
+                     params={"count": count, "after": after})
     if r.status_code >= 400:
         return None
 
-    after = r.get('data', {}).get('after', None)
+    after = r.json().get('data').get('after')
+    count = r.json().get('data').get('count')
 
     hot_list2 = hot_list + [post.get("data").get("title")
                             for post in r.json()
@@ -31,4 +32,4 @@ def recurse(subreddit, hot_list=[], after=None):
     if after is None:
         return hot_list2
 
-    return recurse(subreddit, hot_list2, after)
+    return recurse(subreddit, hot_list2, count, after)
