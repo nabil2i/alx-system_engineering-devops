@@ -12,7 +12,7 @@ def top_ten(subreddit):
     hot posts listed for a given subreddit"""
     if subreddit is None or type(subreddit) is not str:
         print('None')
-    r = requests.get("https://www.reddit.com/r/{}/hot.json?"
+    r = requests.get("https://www.reddit.com/r/{}/hot.json"
                      .format(subreddit),
                      headers={"User-Agent": "Custom-User-Agent"},
                      allow_redirects=False,
@@ -20,5 +20,5 @@ def top_ten(subreddit):
     if r.status_code >= 300:
         print('None')
     else:
-        [print(child.get("data").get("title"))
-         for child in r.json().get("data").get("children")]
+        [print(post.get("data").get("title"))
+         for post in r.json().get("data").get("children")]
