@@ -8,6 +8,8 @@ A postmortem is a tool widely used in the tech industry. After any outage, the t
 To provide the rest of the company’s employees easy access to information detailing the cause of the outage. Often outages can have a huge impact on a company, so managers and executives have to understand what happened and how it will impact their work.
 And to ensure that the root cause(s) of the outage has been discovered and that measures are taken to make sure it will be fixed.
 
+Find my postmortem here [https://docs.google.com/document/d/1tBgNG8PcmeDKhzlqouOue52yNVWMVxcSne5SJB-V1A8/edit?usp=sharing](https://docs.google.com/document/d/1tBgNG8PcmeDKhzlqouOue52yNVWMVxcSne5SJB-V1A8/edit?usp=sharing)
+
 ## Requirements:
 
 * Issue Summary (that is often what executives will read) must contain:
@@ -34,4 +36,4 @@ And to ensure that the root cause(s) of the outage has been discovered and that 
 * Be brief and straight to the point, between 400 to 600 words
 
 
-Find my postmortem here [https://docs.google.com/document/d/1tBgNG8PcmeDKhzlqouOue52yNVWMVxcSne5SJB-V1A8/edit?usp=sharing](https://docs.google.com/document/d/1tBgNG8PcmeDKhzlqouOue52yNVWMVxcSne5SJB-V1A8/edit?usp=sharing)
+
